@@ -9,19 +9,17 @@
 year = int(input("Year: "))
 print(year)
 
-if (year % 4) == 0:
-    if (year % 100) != 0:
-        print('Leap Year')
-    elif (year % 400) == 0:
-        print('Leap Year')
-    else:
-        print('Not Leap Year')
-else:
-    if (year % 400) == 0:
-        print('Leap Year')
-    else:
-        print('Not Leap Year')
 
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("Leap year.")
+        else:
+            print("Not leap year.")
+    else:
+        print("Leap year.")
+else:
+  print("Not leap year.")
 
     
 
