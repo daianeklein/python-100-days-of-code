@@ -18,3 +18,20 @@
 # to include the words in bold from the interpretations above. e.g. underweight, normal weight, 
 # overweight, obese, clinically obese.
 
+
+height = float(input("enter your height in m: "))
+weight = float(input("enter your weight in kg: "))
+
+bmi = float((weight / (height ** 2)))
+bmi = round(bmi, 2)
+
+if bmi < 18.6:
+    print(f'Your BMI is {bmi}, you are underweight!')
+elif bmi >= 18.5 and bmi < 26:
+    print(f'Your BMI is {bmi}, you have normal weight!')
+elif bmi >= 25 and bmi < 31:
+    print(f'Your BMI is {bmi}, you are slightly overweight!')
+elif bmi >= 30 and bmi < 36:
+    print(f'Your BMI is {bmi}, you are obese')
+else:
+    print(f'Your BMI is {bmi}, you are clinically obese')
