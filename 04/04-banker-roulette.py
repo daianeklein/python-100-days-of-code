@@ -11,7 +11,9 @@ import random
 names_string = input("Give me evebody's names, separated by a comma: ")
 names_string = names_string.split(',')
 
-random_number = random.randint(0, len(names_string))
+random_number = random.randint(0, (len(names_string) - 1))
 random_name = names_string[random_number]
 
 print(f'{random_name} is going o buy the meal today!')
+
+
