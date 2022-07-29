@@ -17,20 +17,21 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
 first_round_password = []
-second_round_password = []
 
-for i in range(0, nr_letters):
+
+for i in range(1, nr_letters + 1):
     first_round_password.append(random.choice(letters))
 
-for i in range(0, nr_symbols):
+for i in range(1, nr_symbols + 1):
     first_round_password.append(random.choice(numbers))
 
-for i in range(0, nr_numbers):
+for i in range(1, nr_numbers+  1):
     first_round_password.append(random.choice(symbols))
 
-for j in range(0, len(first_round_password)):
-    second_round_password.append(random.choice(first_round_password))
+# for j in range(1, len(first_round_password)):
+#     second_round_password.append(random.choice(first_round_password))
+random.shuffle(first_round_password)
     
 
-strong_passwrod = ''.join(second_round_password)
+strong_passwrod = ''.join(first_round_password)
 print(f'Your Strong Password: {strong_passwrod}')
