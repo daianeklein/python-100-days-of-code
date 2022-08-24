@@ -130,3 +130,6 @@ dmypy.json
 
 #config
 .DS_Store
+
+#venv
+Vent-100-days/
