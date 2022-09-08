@@ -2,5 +2,5 @@
     "python.analysis.extraPaths": [
         "./04"
     ],
-    "python.pythonPath": "/Users/daianeklein/Documents/DS/python-100-days-of-code/venv-100-days/bin/python3.10"
+    "python.pythonPath": "venv-100-days/bin/python"
 }
