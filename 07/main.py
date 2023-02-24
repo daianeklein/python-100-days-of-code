@@ -1,3 +1,4 @@
+import stages
 import random
 
 word_list = ['school', 'balloon', 'student', 'elephant']
