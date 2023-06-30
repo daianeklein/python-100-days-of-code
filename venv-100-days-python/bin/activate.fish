@@ -20,7 +20,6 @@ function deactivate  -d "Exit virtual environment and return to normal shell env
     end
 
     set -e VIRTUAL_ENV
-    set -e VIRTUAL_ENV_PROMPT
     if test "$argv[1]" != "nondestructive"
         # Self-destruct!
         functions -e deactivate
@@ -30,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/daianeklein/Documents/DS/python-100-days-of-code/venv-100-days"
+set -gx VIRTUAL_ENV "/Users/daianeklein/Documents/DS/python-100-days-of-code/venv-100-days-python"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
@@ -53,7 +52,7 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
         set -l old_status $status
 
         # Output the venv prompt; color taken from the blue of the Python logo.
-        printf "%s%s%s" (set_color 4B8BBE) "(venv-100-days) " (set_color normal)
+        printf "%s%s%s" (set_color 4B8BBE) "(venv-100-days-python) " (set_color normal)
 
         # Restore the return status of the previous command.
         echo "exit $old_status" | .
@@ -62,5 +61,4 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
     end
 
     set -gx _OLD_FISH_PROMPT_OVERRIDE "$VIRTUAL_ENV"
-    set -gx VIRTUAL_ENV_PROMPT "(venv-100-days) "
 end

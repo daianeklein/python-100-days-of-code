@@ -1,4 +1,4 @@
-#!/Users/daianeklein/Documents/DS/python-100-days-of-code/venv-100-days/bin/python3.10
+#!/Users/daianeklein/Documents/DS/python-100-days-of-code/venv-100-days-python/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
