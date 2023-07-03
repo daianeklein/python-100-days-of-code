@@ -1,11 +1,10 @@
 import datetime as dt
 import smtplib
 import random
+import os
 import json
-
-#date
-today = dt.datetime.now()
-today_day = today.weekday()
+import smtplib
+from dotenv import load_dotenv
 
 #quotes
 path = '/Users/daianeklein/Documents/DS/python-100-days-of-code/32/Motivacional_quotes/quotes.txt'
@@ -20,23 +19,31 @@ with open(path, 'r') as f:
             'quote': quote_text.strip()
         }
         quotes.append(quote)
-#author_list = []
-# quotes_list = []
-# quotes_dict = {}
 
-# with open(path, 'r') as f:
-#     for line in f:
-#         quotes, author = line.strip().split('-')
-#         author_list.append(author)
-#         quotes_list.append(quotes)
+#picking a random quote
+quotes_list_count = len(quotes)
+index_quote_of_day = random.randint(1, quotes_list_count)
+quote_of_day = quotes[index_quote_of_day]
+quote_of_day_author = quote_of_day['author']
+quote_of_day_msg = quote_of_day['quote']
 
-# author_list = [element.strip() for element in author_list]
-# quotes_list = [element.strip() for element in quotes_list]
+#date
+today = dt.datetime.now()
+today_day = today.weekday()
 
-# for author, quote in zip(author_list, quotes_list):
-#     quotes_dict[author] = quote
+#sending e-mail
+if today_day == 0:
 
-# items = list(quotes_dict.items())
-# print(items)
+    #email and password
+    load_dotenv()
+    my_email = 'dklein.dev@gmail.com'
+    password = os.getenv('MY_PASSWORD_BIRTHDAY_WISHER')
 
-#pick random text
+    with smtplib.SMTP('smtp.gmail.com', 587) as connection:
+        connection = smtplib.SMTP('smtp.gmail.com', 587)
+        connection.starttls()
+        connection.login(user=my_email,
+                         password=password)
+        connection.sendmail(from_addr=my_email,
+                            to_addrs='daiane.klein22@gmail.com',
+                            msg=f'Subject:Quote of the day\n\n{quote_of_day_author} : {quote_of_day_msg}')
